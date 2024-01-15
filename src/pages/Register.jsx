@@ -1,15 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Input, Button } from "@material-tailwind/react";
 
 function Register() {
+  const navigate = useNavigate();
+  const register = (event) => {
+    event.preventDefault();
+    registerFetch(event, navigate);
+  };
   return (
     <section className="flex flex-col items-center h-screen justify-center">
       <div className="w-72 mb-4">
         <h2 className="text-3xl">Register</h2>
       </div>
-      <form>
+      <form onSubmit={register}>
         <div className="w-72 mb-4">
-          <Input label="Username" />
+          <Input label="username" />
         </div>
         <div className="w-72 mb-4">
           <Input label="firstname" />
@@ -18,7 +24,7 @@ function Register() {
           <Input label="lastname" />
         </div>
         <div className="w-72 mb-4">
-          <Input label="Email" />
+          <Input label="email" />
         </div>
         <div className="w-72 mb-4">
           <Input label="password" />
@@ -26,7 +32,9 @@ function Register() {
         <div className="w-72 mb-4">
           <Input label="Confirm Password" />
         </div>
-        <Button type="submit mb-4">Register</Button>
+        <Button type="submit" className="w-72 mb-4">
+          Register
+        </Button>
       </form>
       <div className="w-72 mt-4">
         <p className="text-sm">
