@@ -1,19 +1,17 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Protected from "./components/Projected";
-
+import { Routes, Route } from 'react-router-dom'
+import Login from './pages/Login.jsx'
+import MyProfilePage from './pages/MyProfilePage.jsx'
+import OverviewPage from './pages/OverviewPage.jsx'
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path={<Protected />} />
+        <Route path="/myprofile" element={<MyProfilePage />} />
+        <Route path="/overview" element={<OverviewPage />} />
       </Routes>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
